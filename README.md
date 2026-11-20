@@ -49,7 +49,13 @@
 
 ## 从源码打包单文件 EXE
 
-双击 `build_exe.bat`，或手动执行：
+先运行图标生成脚本产出 `app.ico`（仓库未内置二进制图标）：
+
+```bash
+python make_icon.py
+```
+
+然后双击 `build_exe.bat`，或手动执行：
 
 ```bash
 pip install pyinstaller
