@@ -142,7 +142,9 @@ def load_frames(path):
         return frames
 
     im = Image.open(path)
-    if ext == ".gif":
+    # 多帧动图：GIF 全部逐帧；WebP 仅当为动画（n_frames>1）时逐帧，静态 WebP 按单图处理
+    multi_webp = ext == ".webp" and getattr(im, "n_frames", 1) > 1
+    if ext == ".gif" or multi_webp:
         frames = []
         i = 0
         while True:
