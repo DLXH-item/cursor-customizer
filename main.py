@@ -424,7 +424,7 @@ class MainWindow(QWidget):
         self.btn_restore.clicked.connect(self.restore)
         btns.addWidget(self.btn_apply, 2)
         btns.addWidget(self.btn_restore, 1)
-        cl.addWidget(btns)
+        cl.addLayout(btns)
 
         left.addWidget(card)
         root.addLayout(left, 3)
